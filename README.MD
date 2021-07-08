@@ -1,7 +1,3 @@
-## Table of Contents 
-*[General Information] (#General-Information)
-*[Overall Mission] (#Overall-Mission)
-*[Documentation] (#Documentation)
 
 
 ## General Information
