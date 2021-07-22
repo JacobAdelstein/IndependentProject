@@ -1,27 +1,28 @@
-
-
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+
+from django.shortcuts import render, HttpResponse
 from .form import ImageForm
 from .models import Image
+
 
 
 # Create your views here.
 
 @login_required
-def index(request):
-    if request.method == "POST":
+def index(response):
+    if response.method == "POST":
 
-        form = ImageForm(data=request.POST, files=request.FILES)
+        form = ImageForm(data=response.POST, files=response.FILES)
         if form.is_valid():
-            form.user = request.user
+            n = form.cleaned_data["name"]
+            t = Image(name=n)
+            t.save()
             form.save()
             obj = form.instance
-        return render(request, "Project.html", {"obj": obj})
+            response.user.image.add(t)
+        return render(response, "Project.html", {"obj": obj})
     else:
-        if request.user.is_authenticated:
-            form = ImageForm(instance=request.user)
+        form = ImageForm()
         img = Image.objects.all()
-        return render(request, "Project.html", {"img": img, "form": form})
+        return render(response, "Project.html", {"img": img, "form": form})
