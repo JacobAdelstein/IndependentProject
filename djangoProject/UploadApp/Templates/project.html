@@ -4,6 +4,7 @@
 
 <h1>Upload Page</h1>
 
+
  <div class="container">
 
 <form action="." method="post" enctype="multipart/form-data">
@@ -14,6 +15,9 @@
 <button type="submit" class="btn btn-lg btn-success">Upload</button>
 </form>
 
+{% for td in user.image_set.all %}
+
+<p><a href="/{{td.id}}">{{td.name}}</a></p>
 {% if obj %}
 <h3>Succesfully uploaded : {{img_obj.caption}}</h3>
 <img src="{{ obj.image.url}}" alt="image" class="img-thumbnail" >
@@ -35,7 +39,7 @@
     {% if forloop.last %}</div>{% endif %}
 
 {% endfor %}
-
+{% endfor %}
 </div>
 
 
