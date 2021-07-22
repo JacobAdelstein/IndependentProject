@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'UploadApp.apps.UploadappConfig',
     'website.apps.WebsiteConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
@@ -127,6 +128,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
 LOGIN_REDIRECT_URL = 'Website-Home'
 LOGIN_URL='login'
 
