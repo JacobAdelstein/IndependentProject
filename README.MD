@@ -1,7 +1,7 @@
 
 
 ## General Information
-
+This is the indepedent project for COSC -412 Summer class at Towson University. This project has been created by Jacob Adelstein.
 
 ## Overall Mission
 
