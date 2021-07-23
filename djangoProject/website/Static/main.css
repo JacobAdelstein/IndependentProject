@@ -1,8 +1,40 @@
 
-body {
-  background: #fafafa;
-  color: #333333;
 
+
+:root {
+  --gradient: linear-gradient(90deg, #0cbaba, purple, #0cbaba);
+
+}
+
+body {
+  font-family: basic-sans, sans-serif;
+  color: #333;
+  background: #ddd;
+  background-size: 300%;
+  background-image: var(--gradient);
+  animation: bg-animation 25s infinite;
+}
+
+@keyframes bg-animation {
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
+}
+
+
+
+.fun {
+  color: white;
+  border: 0;
+  cursor: pointer;
+  background: linear-gradient(90deg, #0cbaba, purple, #0cbaba);
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 350ms;
+}
+
+.fun:hover {
+  background-position: right;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,11 +62,13 @@ ul {
 }
 
 .content-section {
-  background: #ffffff;
+
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+   background: white;
+ margin-top:30px;
 }
 
 
@@ -47,4 +81,10 @@ ul {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.footer{
+    bottom: 0%;
+    position: fixed;
+    margin: auto;
 }
